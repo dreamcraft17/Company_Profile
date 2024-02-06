@@ -1,0 +1,407 @@
+
+<head>
+    <title>CSS Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+
+
+
+        .part1 {
+            float: left;
+            padding: 20px;
+            width: 50%;
+            background-color: #f1f1f1;
+            height: auto;
+            /* only for demonstration, should be removed */
+        }
+
+        .part2 img {
+            float: right;
+            padding: 20px;
+            width: 50%;
+            background-color: #f1f1f1;
+            height: auto;
+            /* only for demonstration, should be removed */
+        }
+
+
+
+        /* Clear floats after the columns */
+        .section1::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .part3 {
+            float: left;
+            padding: 20px;
+            width: 40%;
+            background-color: #f1f1f1;
+            height: auto;
+            /* only for demonstration, should be removed */
+        }
+
+        .part4 {
+            float: right;
+            padding: 20px;
+            width: 60%;
+            background-color: #f1f1f1;
+            height: auto;
+            /* only for demonstration, should be removed */
+        }
+
+
+
+        /* Clear floats after the columns */
+        .section2::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+
+        .part5 {
+            float: left;
+            padding: 20px;
+            width: 50%;
+            background-color: #f1f1f1;
+            height: auto;
+            /* only for demonstration, should be removed */
+        }
+
+        .part6 {
+            float: right;
+            padding: 20px;
+            width: 50%;
+            background-color: #f1f1f1;
+            height: auto;
+            /* only for demonstration, should be removed */
+        }
+
+        .section3::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Style the footer */
+        footer {
+            background-color: #777;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+
+        /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+        /* @media (max-width: 600px) {
+
+            nav, */
+        article {
+            width: 100%;
+            height: auto;
+        }
+
+        /* } */
+
+        .toggle-container {
+            cursor: pointer;
+            position: relative;
+        }
+
+        .toggle-container:before {
+            content: "+";
+            display: block;
+            float: right;
+            margin-right: 5px;
+        }
+
+        .toggle-container.active:before {
+            content: "-";
+        }
+
+        .toggle-text {
+            display: none;
+        }
+
+        .toggle-container.active+.toggle-text {
+            display: block;
+        }
+
+        .garispasi {
+            border-top: 1px solid #000;
+            margin: 5px 0;
+        }
+
+        .logo-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .container {
+            position: relative;
+            /* Diperlukan untuk posisi absolut teks */
+        }
+
+        .images {
+            width: auto;
+            height: auto;
+        }
+
+        .middle {
+            transition: .5s ease;
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .container:hover .images {
+            opacity: 0.3;
+        }
+
+        .container:hover .middle {
+            opacity: 1;
+        }
+
+        .text {
+            background-color: #04AA6D;
+
+            font-size: 16px;
+            margin-right: 205px;
+            text-align: center;
+        }
+
+        .inline {
+            display: inline;
+            /* Menjadikan paragraf sebagai inline element */
+            margin-right: 10px;
+            /* Memberi jarak antara paragraf dan tombol */
+        }
+
+        .button {
+            background-color: #04AA6D;
+            /* Green */
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        .contact {
+            background-color: white;
+            color: black;
+            border: 2px solid #008CBA;
+        }
+
+        .contact:hover {
+            background-color: #008CBA;
+            color: white;
+        }
+
+        footer {
+            color: white;
+            background-color: grey;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+
+    <!-- <h2>CSS Layout Float</h2>
+    <p>In this example, we have created a header, two columns/boxes and a footer. On smaller screens, the columns will
+        stack on top of each other.</p>
+    <p>Resize the browser window to see the responsive effect (you will learn more about this in our next chapter - HTML
+        Responsive.)</p> -->
+
+    <header>
+        <h2>About us</h2>
+    </header>
+
+    <section class="section1">
+        <article class="part5">
+            <video width="auto" height="auto" controls>
+                <source src="video.mp4" type="video/mp4">
+
+            </video>
+        </article>
+
+        <article class="part6">
+            <h3>Profesional Machining, Anodizing, & Metal Product Manufacturing Factory</h3>
+            <div class="garispasi"></div> <!-- Garis spasi -->
+            <h1>PT. SOHOU KIKAKU INDONESIA</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, nam quae. Molestiae quam delectus, neque nisi quidem culpa ut vel quis laudantium quos? In corporis nesciunt autem ipsam nihil facilis?</p>
+        </article>
+    </section>
+
+
+    <section class="section2">
+        <article class="part1">
+            <div class="toggle-container" onclick="toggleText(this)">
+                VISI & MISI
+            </div>
+            <div class="toggle-text">
+                <h1>SOLUTION BASED</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam optio repudiandae deserunt inventore ex dicta itaque, provident porro, assumenda ab odit iste dolor illum ad! Consectetur obcaecati at minus rerum unde temporibus laboriosam ab soluta, maiores, quae ullam. Eligendi, rerum. Atque exercitationem maiores temporibus, quibusdam ab reiciendis quos ipsum accusamus.</p>
+            </div>
+            <div class="garispasi"></div> <!-- Garis spasi -->
+            <div class="toggle-container" onclick="toggleText(this)">
+                STRUKTUR ORGANISASI
+            </div>
+            <div class="toggle-text">
+                <h1>Struktur Organisasi</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste cumque quo ipsum! Tempore cupiditate vero non dicta nemo reiciendis dolorum nam eligendi minima nesciunt animi at beatae provident veritatis, necessitatibus quae delectus molestiae! Cumque fuga cum impedit doloremque ipsa numquam recusandae. Mollitia nihil odit temporibus, rerum ab reprehenderit autem itaque.</p>
+            </div>
+            <div class="garispasi"></div> <!-- Garis spasi -->
+            <div class="toggle-container" onclick="toggleText(this)">
+                PARTNERSHIP
+            </div>
+            <div class="toggle-text">
+                <h1>HERE TO SERVE</h1>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam fuga corrupti eveniet, aspernatur deleniti facere odio dolorem aperiam libero deserunt exercitationem quasi ratione iusto fugit numquam, eum itaque officiis est beatae. Culpa quae deleniti ab sed, laborum voluptate veniam esse doloremque, nobis quos minus, facere eveniet fugit quis nesciunt blanditiis?</p>
+            </div>
+            <div class="garispasi"></div> <!-- Garis spasi -->
+            <div class="toggle-container" onclick="toggleText(this)">
+                ACHIEVEMENT
+            </div>
+            <div class="toggle-text">
+                <p>PT SOHOU products are manufactured according to the following specifications:
+
+                    <li> IEC (International Electrotechnical Commission) </li>
+                    <li> ANSI (American National Standards Institute) </li>
+                    <li> NEMA (National Electrical Manufacturers Association) </li>
+                    <li> BSI (British Standards Institution) </li>
+                    <li> SPLN (PLN Standard) </li>
+                </p>
+                <p> We regularly send samples for testing to independent laboratory in Indonesia and the region.
+                    Our company is certified by:
+
+
+                    <li> ISO 9001:2015</li>
+                    <li> ISO 14001:2015</li>
+                    <li> ISO 45001:2018</li>
+                    <li> SMK3 Kemnaker</li>
+                </p>
+                Our products are certified by:
+
+                <li> PLN PUSLITBANG</li>
+                <li> BP MIGAS</li>
+                <li> ASTA</li>
+                <li> ATEX</li>
+
+                </p>
+            </div>
+
+        </article>
+
+        <article class="part2">
+        <img src="/img/SKI.jpg" width="100%" alt="">
+        </article>
+    </section>
+
+    <section class="section3">
+        <article class="part3">
+            <h1>PT SOHOU KIKAKU</h1>
+
+            <h1> Our Document Certification</h1>
+            <h3>PT SOHOU KIKAKU products are manufactured according to the following specifications.</h3>
+
+        </article>
+
+        <article class="part4">
+            <div class="logo-grid">
+                <div class="container">
+                    <img src="logo.png" class="image" alt="Logo 1">
+                    <div class="middle">
+                        <div class="text">John Doe</div>
+                    </div>
+                </div>
+                <div class="container">
+                    <img src="logo.png" class="image" alt="Logo 2">
+                    <div class="middle">
+                        <div class="text">John Doe</div>
+                    </div>
+                </div>
+                <div class="container">
+                    <img src="logo.png" class="image" alt="Logo 3">
+                    <div class="middle">
+                        <div class="text">John Doe</div>
+                    </div>
+                </div>
+                <div class="container">
+                    <img src="logo.png" class="image" alt="Logo 4">
+                    <div class="middle">
+                        <div class="text">John Doe</div>
+                    </div>
+                </div>
+                <div class="container">
+                    <img src="logo.png" class="image" alt="Logo 5">
+                    <div class="middle">
+                        <div class="text">John Doe</div>
+                    </div>
+                </div>
+                <div class="container">
+                    <img src="logo.png" class="image" alt="Logo 6">
+                    <div class="middle">
+                        <div class="text">John Doe</div>
+                    </div>
+                </div>
+                <div class="container">
+                    <img src="logo.png" class="image" alt="Logo 7">
+                    <div class="middle">
+                        <div class="text">John Doe</div>
+                    </div>
+                </div>
+                <div class="container">
+                    <img src="logo.png" class="image" alt="Logo 8">
+                    <div class="middle">
+                        <div class="text">John Doe</div>
+                    </div>
+                </div>
+                <div class="container">
+                    <img src="logo.png" class="image" alt="Logo 9">
+                    <div class="middle">
+                        <div class="text">John Doe</div>
+                    </div>
+                </div>
+        </article>
+    </section>
+
+
+    <footer>
+        <p class="inline"> you have any questions feel free to contact us</p><button
+            class="button contact">Blue</button>
+    </footer>
+    <footer>
+        <p>Copyright © 2024 PT SOHOU KIKAKU. All Rights Reserved.</p>
+    </footer>
+    <script>
+        function toggleText(element) {
+            element.classList.toggle('active');
+        }
+    </script>
+</body>
+
+
